@@ -40,25 +40,42 @@ void loop(){
   
   switch (in){
   case 'q':
-  down();
+  valShoulder--;
+  delay(5);
+  Debug();
   break;
+  
   case 'w':
-  forward();
+  Debug();
+  
   break;
+  
   case 'e':
-  up();
+  valShoulder++;
+  delay(5);
+  Debug();
   break;
+  
   case 'a':
-  left();
+  valBase++;
+  delay(5);
+  Debug();
   break;
+  
   case 's':
-  backward();
+  
+  Debug();
   break;
+  
   case 'd':
-  right();
+  valBase--;
+  delay(5);
+  Debug();
   break;
+  
   case ',':
-  extrude();
+  
+  Debug();
   break;
   }
 
@@ -80,38 +97,6 @@ int backward(){
   return 0;
 }
 
-int left(){
-  valBase++;
-  delay(5);
-  Debug();
-  return 0;
-}
-
-int right(){
-  valBase--;
-  delay(5);
-  Debug();
-  return 0;
-}
-
-int up(){
-  valShoulder++;
-  delay(5);
-  Debug();
-  return 0;
-}
-
-int down(){
-  valShoulder--;
-  delay(5);
-  Debug();
- return 0;
-}
-
-int extrude(){
-  Debug();
-  return 0;
-}
 
 void Debug(){
   digitalWrite(debug, HIGH);
