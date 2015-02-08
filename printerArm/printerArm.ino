@@ -6,10 +6,10 @@ Servo servoElbow;
 Servo servoWrist;
 Servo servoButton;
 
-int valBase = 0;
+int valBase = 90;
 int valShoulder = 90;
-int valElbow = 0;
-int valWrist = 0;
+int valElbow = 90;
+int valWrist = 90;
 int valButton = 0;
 
 char in;
@@ -41,16 +41,21 @@ void loop(){
   switch (in){
   case 'q':
   valElbow++;
+  valWrist++;
   delay(5);
   Debug();
   break;
   
   case 'w':
+  valShoulder++;
+  valElbow++;
+  delay(10);
   Debug();
   break;
   
   case 'e':
   valElbow--;
+  valWrist--;
   delay(5);
   Debug();
   break;
@@ -62,7 +67,9 @@ void loop(){
   break;
   
   case 's':
-  
+  valShoulder--;
+  valElbow--;
+  delay(10);
   Debug();
   break;
   
@@ -84,16 +91,12 @@ void loop(){
   else if(valBase < 0){
     valBase = 0; 
   }
-}
-
-int forward(){
-  
-  return 0;
-}
-
-int backward(){
-  Debug();
-  return 0;
+  if(valShoulder >= 100){
+    valBase = 100; 
+  }
+  else if(valShoulder < 60){
+    valBase = 60; 
+  }
 }
 
 
