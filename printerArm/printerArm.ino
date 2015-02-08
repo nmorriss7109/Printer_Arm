@@ -7,12 +7,14 @@ Servo servoWrist;
 Servo servoButton;
 
 int valBase = 0;
-int valShoulder = 90;
+int valShoulder = 0;
 int valElbow = 0;
 int valWrist = 0;
 int valButton = 0;
 
 char in;
+
+int debug = 13;
 
 void setup(){
   //initialize stuffad
@@ -36,30 +38,32 @@ void loop(){
   servoWrist.write(valWrist);
   servoButton.write(valButton);
   
-  if (in == 'q'){
-    down(); 
+  switch (in){
+  case 'q':
+  down();
+  break;
+  case 'w':
+  forward();
+  break;
+  case 'e':
+  up();
+  break;
+  case 'a':
+  left();
+  break;
+  case 's':
+  backward();
+  break;
+  case 'd':
+  right();
+  break;
+  case ',':
+  extrude();
+  break;
   }
-  if (in == 'w'){
-    forward(); 
-  }
-  if (in == 'e'){
-    up(); 
-  }
-  if (in == 'a'){
-    left(); 
-  }
-  if (in == 's'){
-    backward(); 
-  }
-  if (in == 'd'){
-    right(); 
-  }
-  if (in == ','){
-    extrude(); 
-  }
-  
-  if(valBase > 1023){
-    valBase = 1023; 
+
+  if(valBase >= 179){
+    valBase = 179; 
   }
   else if(valBase < 0){
     valBase = 0; 
@@ -68,67 +72,49 @@ void loop(){
 
 int forward(){
   
-  return valBase;
-  return valShoulder;
-  return valElbow;
-  return valWrist;
-  return valButton;
+  return 0;
 }
 
 int backward(){
-  
-  return valBase;
-  return valShoulder;
-  return valElbow;
-  return valWrist;
-  return valButton;
+  Debug();
+  return 0;
 }
 
 int left(){
   valBase++;
-  delay(10);
-  return valBase;
-  return valShoulder;
-  return valElbow;
-  return valWrist;
-  return valButton;
+  delay(5);
+  Debug();
+  return 0;
 }
 
 int right(){
   valBase--;
-  delay(10);
-  return valBase;
-  return valShoulder;
-  return valElbow;
-  return valWrist;
-  return valButton;
+  delay(5);
+  Debug();
+  return 0;
 }
 
 int up(){
   valShoulder++;
-  delay(10);
-  return valBase;
-  return valShoulder;
-  return valElbow;
-  return valWrist;
-  return valButton;
+  delay(5);
+  Debug();
+  return 0;
 }
 
 int down(){
   valShoulder--;
-  delay(10);
-  return valBase;
-  return valShoulder;
-  return valElbow;
-  return valWrist;
-  return valButton;
+  delay(5);
+  Debug();
+ return 0;
 }
 
 int extrude(){
+  Debug();
+  return 0;
+}
 
-  return valBase;
-  return valShoulder;
-  return valElbow;
-  return valWrist;
-  return valButton;
+void Debug(){
+  digitalWrite(debug, HIGH);
+  delay(5);
+  digitalWrite(debug, LOW); 
 }
