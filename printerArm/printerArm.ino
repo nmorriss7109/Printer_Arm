@@ -7,7 +7,7 @@ Servo servoWrist;
 Servo servoButton;
 
 int valBase = 0;
-int valShoulder = 0;
+int valShoulder = 90;
 int valElbow = 0;
 int valWrist = 0;
 int valButton = 0;
@@ -40,18 +40,17 @@ void loop(){
   
   switch (in){
   case 'q':
-  valShoulder--;
+  valElbow++;
   delay(5);
   Debug();
   break;
   
   case 'w':
   Debug();
-  //code goes here
   break;
   
   case 'e':
-  valShoulder++;
+  valElbow--;
   delay(5);
   Debug();
   break;
@@ -63,10 +62,10 @@ void loop(){
   break;
   
   case 's':
-  //code goes here
+  
   Debug();
   break;
-  //code goes here  
+  
   case 'd':
   valBase--;
   delay(5);
@@ -74,7 +73,7 @@ void loop(){
   break;
   
   case ',':
-  //code goes here  
+  
   Debug();
   break;
   }
