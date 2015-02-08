@@ -54,6 +54,9 @@ void loop(){
   if (in == 'd'){
     right(); 
   }
+  if (in == ','){
+    extrude(); 
+  }
   
   if(valBase > 1023){
     valBase = 1023; 
@@ -114,6 +117,15 @@ int up(){
 int down(){
   valShoulder--;
   delay(10);
+  return valBase;
+  return valShoulder;
+  return valElbow;
+  return valWrist;
+  return valButton;
+}
+
+int extrude(){
+
   return valBase;
   return valShoulder;
   return valElbow;

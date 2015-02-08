@@ -29,7 +29,10 @@ void draw(){
     } 
     if(key == 'e'){
       port.write("e");
-    } 
+    }
+     if(key == ' '){
+      port.write(",");
+    }  
   }
   else if (!keyPressed){
     port.write('.'); 
