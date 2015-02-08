@@ -47,7 +47,7 @@ void loop(){
   
   case 'w':
   Debug();
-  
+  //code goes here
   break;
   
   case 'e':
@@ -63,10 +63,10 @@ void loop(){
   break;
   
   case 's':
-  
+  //code goes here
   Debug();
   break;
-  
+  //code goes here  
   case 'd':
   valBase--;
   delay(5);
@@ -74,7 +74,7 @@ void loop(){
   break;
   
   case ',':
-  
+  //code goes here  
   Debug();
   break;
   }
