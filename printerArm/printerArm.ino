@@ -40,42 +40,42 @@ void loop(){
   
   switch (in){
   case 'q':
-  valElbow++;
+  valElbow--;
   valWrist++;
-  delay(7);
+  delay(2);
   Debug();
   break;
   
   case 'w':
   valShoulder++;
-  valElbow++;
-  delay(10);
+  valElbow--;
+  delay(2);
   Debug();
   break;
   
   case 'e':
-  valElbow--;
+  valElbow++;
   valWrist--;
-  delay(7);
+  delay(2);
   Debug();
   break;
   
   case 'a':
   valBase++;
-  delay(7);
+  delay(2);
   Debug();
   break;
   
   case 's':
   valShoulder--;
-  valElbow--;
-  delay(10);
+  valElbow++;
+  delay(2);
   Debug();
   break;
   
   case 'd':
   valBase--;
-  delay(7);
+  delay(2);
   Debug();
   break;
   
@@ -101,11 +101,17 @@ void loop(){
   else if(valBase < 0){
     valBase = 0; 
   }
-  if(valShoulder >= 100){
-    valBase = 100; 
+//  if(valShoulder >= 180){
+//    valShoulder = 179; 
+//  }
+//  else if(valShoulder < 0){
+//    valShoulder = 0; 
+//  }
+   if(valElbow >= 150){
+    valElbow = 150; 
   }
-  else if(valShoulder < 60){
-    valBase = 60; 
+  else if(valElbow < 0){
+    valElbow = 0; 
   }
 }
 
